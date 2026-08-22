@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoaib Khan | Python Developer & AI/ML Engineer</title>
+    <meta name="description"
+        content="Portfolio of Shoaib Khan - Python Backend Developer & AI/ML Engineer specializing in FastAPI, LLMs, Agentic AI, and Machine Learning Systems.">
+    <meta name="keywords"
+        content="Shoaib Khan, Python Developer, AI Engineer, Machine Learning, FastAPI, Agentic AI, Backend Developer">
+    <meta name="author" content="Shoaib Khan">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Shoaib Khan | Python Developer & AI/ML Engineer">
+    <meta property="og:description"
+        content="Explore projects, skills, and background in Python backend engineering, AI/ML, and Agentic Systems.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Mouse Spotlight Glow -->
+    <div class="mouse-spotlight" id="mouse-spotlight"></div>
+
+    <!-- Background glow effects -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <!-- Header & Navigation -->
+    <header id="header">
+        <nav class="navbar container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-symbol">&lt;/&gt;</span>
+                <span class="logo-text">Shoaib<span class="accent-dot">.</span></span>
+            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#certificates" class="nav-link">Certificates</a></li>
+                    <li class="nav-item"><a href="#journey" class="nav-link">Journey</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-actions">
+                <!-- Download CV Button in Header -->
+                <a href="assets/Shoaib_Khan_Resume.pdf" download="Shoaib_Khan_Resume.pdf"
+                    class="btn btn-sm btn-outline header-cv-btn" id="download-cv-btn" title="Download Resume / CV (PDF)"
+                    target="_blank" rel="noopener noreferrer">
+                    <i class="fa-solid fa-file-arrow-down"></i>
+                    <span>Download CV</span>
+                </a>
+
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light theme"
+                    title="Toggle theme">
+                    <i class="fa-solid fa-moon moon-icon"></i>
+                    <i class="fa-solid fa-sun sun-icon"></i>
+                </button>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="status-pill animate-fade-in">
+                        <span class="status-dot"></span>
+                        <span>Backend Developer at <a href="https://neuroapp.pro/about.html" target="_blank"
+                                rel="noopener noreferrer" class="status-company-link">Neuroapp</a> · Open to AI
+                            collaborations</span>
+                    </div>
+
+                    <h1 class="hero-title animate-fade-in-up">
+                        Hi, I'm <span class="gradient-text">Shoaib Khan</span>
+                    </h1>
+
+                    <div class="hero-typed-wrapper animate-fade-in-up delay-1">
+                        <span class="typed-prefix">Specializing in </span>
+                        <span id="typed-text" class="typed-highlight"></span>
+                        <span class="typed-cursor">|</span>
+                    </div>
+
+                    <p class="hero-description animate-fade-in-up delay-2">
+                        I craft high-performance Python backend architectures, scalable APIs with
+                        <strong>FastAPI</strong>, and intelligent automation pipelines powered by <strong>LLMs</strong>
+                        and <strong>Agentic Systems</strong>.
+                    </p>
+
+                    <div class="hero-cta animate-fade-in-up delay-3">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>Explore Projects</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Get in Touch</span>
+                            <i class="fa-regular fa-paper-plane"></i>
+                        </a>
+                    </div>
+
+                    <div class="social-links animate-fade-in-up delay-4">
+                        <a href="https://github.com/shoaib1147-dev" target="_blank" rel="noopener noreferrer"
+                            class="social-icon" aria-label="GitHub Profile">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/shoaib-khan-a60070333/" target="_blank"
+                            rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn Profile">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:shoaibdotani1147@gmail.com" class="social-icon" aria-label="Send Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual animate-fade-in-up delay-2">
+                    <div class="code-card card-tilt">
+                        <div class="code-card-header">
+                            <div class="code-card-dots">
+                                <span class="circle red"></span>
+                                <span class="circle yellow"></span>
+                                <span class="circle green"></span>
+                                <span class="code-card-title">developer_profile.py</span>
+                            </div>
+                            <button type="button" class="copy-code-btn" id="copy-code-btn" title="Copy code snippet">
+                                <i class="fa-regular fa-copy"></i>
+                                <span class="copy-label">Copy</span>
+                            </button>
+                        </div>
+                        <div class="code-card-body">
+                            <pre><code id="profile-code-content"><span class="code-keyword">class</span> <span class="code-class">Engineer</span>:
+    <span class="code-keyword">def</span> <span class="code-function">__init__</span>(self):
+        self.name = <span class="code-string">"Shoaib Khan"</span>
+        self.current_company = <span class="code-string">"Neuroapp"</span>
+        self.degree = <span class="code-string">"Electrical Eng. (Computing & AI)"</span>
+        self.primary_stack = [<span class="code-string">"Python"</span>, <span class="code-string">"FastAPI"</span>, <span class="code-string">"PyTorch"</span>]
+        self.passions = [<span class="code-string">"Agentic AI"</span>, <span class="code-string">"Backend Scaling"</span>, <span class="code-string">"LLMs"</span>]
+
+    <span class="code-keyword">def</span> <span class="code-function">build_solution</span>(self, problem):
+        <span class="code-keyword">return</span> <span class="code-string">f"Practical AI & Robust APIs for {problem}"</span></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats Banner -->
+            <div class="container stats-container">
+                <div class="stat-card card-tilt">
+                    <div class="stat-icon"><i class="fa-solid fa-code"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-value">Python & FastAPI</span>
+                        <span class="stat-label">Core Backend Stack</span>
+                    </div>
+                </div>
+                <div class="stat-card card-tilt">
+                    <div class="stat-icon"><i class="fa-solid fa-brain"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-value">AI & LLM Agents</span>
+                        <span class="stat-label">Agentic Workflows</span>
+                    </div>
+                </div>
+                <div class="stat-card card-tilt">
+                    <div class="stat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-value">EE + AI</span>
+                        <span class="stat-label">Engineering Foundation</span>
+                    </div>
+                </div>
+                <div class="stat-card card-tilt">
+                    <div class="stat-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-value">Production-Ready</span>
+                        <span class="stat-label">Clean Architecture</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Infinite Marquee -->
+        <section class="tech-marquee-section" aria-label="Core Technologies Marquee">
+            <div class="marquee-track">
+                <div class="marquee-content">
+                    <span class="marquee-item"><i class="fa-brands fa-python"></i> Python</span>
+                    <span class="marquee-item"><i class="fa-solid fa-bolt"></i> FastAPI</span>
+                    <span class="marquee-item"><i class="fa-solid fa-fire"></i> PyTorch</span>
+                    <span class="marquee-item"><i class="fa-solid fa-robot"></i> Agentic AI</span>
+                    <span class="marquee-item"><i class="fa-brands fa-docker"></i> Docker</span>
+                    <span class="marquee-item"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+                    <span class="marquee-item"><i class="fa-solid fa-file-lines"></i> PaddleOCR</span>
+                    <span class="marquee-item"><i class="fa-solid fa-flask"></i> Flask</span>
+                    <span class="marquee-item"><i class="fa-brands fa-flutter"></i> Flutter</span>
+                    <span class="marquee-item"><i class="fa-brands fa-react"></i> React</span>
+                    <span class="marquee-item"><i class="fa-solid fa-memory"></i> Redis</span>
+                    <span class="marquee-item"><i class="fa-brands fa-linux"></i> Linux</span>
+                    <span class="marquee-item"><i class="fa-brands fa-git-alt"></i> Git</span>
+                </div>
+                <div class="marquee-content" aria-hidden="true">
+                    <span class="marquee-item"><i class="fa-brands fa-python"></i> Python</span>
+                    <span class="marquee-item"><i class="fa-solid fa-bolt"></i> FastAPI</span>
+                    <span class="marquee-item"><i class="fa-solid fa-fire"></i> PyTorch</span>
+                    <span class="marquee-item"><i class="fa-solid fa-robot"></i> Agentic AI</span>
+                    <span class="marquee-item"><i class="fa-brands fa-docker"></i> Docker</span>
+                    <span class="marquee-item"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+                    <span class="marquee-item"><i class="fa-solid fa-file-lines"></i> PaddleOCR</span>
+                    <span class="marquee-item"><i class="fa-solid fa-flask"></i> Flask</span>
+                    <span class="marquee-item"><i class="fa-brands fa-flutter"></i> Flutter</span>
+                    <span class="marquee-item"><i class="fa-brands fa-react"></i> React</span>
+                    <span class="marquee-item"><i class="fa-solid fa-memory"></i> Redis</span>
+                    <span class="marquee-item"><i class="fa-brands fa-linux"></i> Linux</span>
+                    <span class="marquee-item"><i class="fa-brands fa-git-alt"></i> Git</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Overview</span>
+                    <h2 class="section-title">About Me</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-card about-bio">
+                        <h3>Turning Ideas Into <span class="gradient-text">Practical Software</span></h3>
+                        <p>
+                            I’m <strong>Shoaib Khan</strong>, a Python Developer and AI/ML Engineer with a solid
+                            background in <strong>Electrical Engineering (Computing & AI)</strong>. I enjoy architecting
+                            systems that bridge robust software engineering with modern artificial intelligence.
+                        </p>
+                        <div class="current-company-badge">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span>Currently working at <a href="https://neuroapp.pro/about.html" target="_blank"
+                                    rel="noopener noreferrer" class="company-link"
+                                    title="Verify company website"><strong>Neuroapp</strong> <i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
+                        </div>
+                        <p>
+                            Currently, I am working at <a href="https://neuroapp.pro/about.html" target="_blank"
+                                rel="noopener noreferrer" class="text-link"><strong>Neuroapp</strong></a> software
+                            company, where I contribute to building scalable software systems. My primary focus revolves
+                            around high-performance Python backend services using <strong>FastAPI</strong> and
+                            <strong>Flask</strong>, alongside designing and deploying machine learning pipelines,
+                            Computer Vision, OCR tools, NLP, and intelligent <strong>Agentic AI</strong> systems.
+                        </p>
+                        <p>
+                            I also embrace modern frontend and cross-platform technologies like
+                            <strong>Flutter</strong> to deliver unified, end-to-end user
+                            experiences.
+                        </p>
+
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Backend Developer at <a href="https://neuroapp.pro/about.html" target="_blank"
+                                        rel="noopener noreferrer" class="highlight-link"><strong>Neuroapp</strong> <i
+                                            class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>High-throughput async APIs</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>LLM agent orchestration</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>OCR & Computer Vision pipelines</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-cards-col">
+                        <div class="card pillar-card">
+                            <div class="pillar-icon"><i class="fa-solid fa-server"></i></div>
+                            <h4>Backend Engineering</h4>
+                            <p>Designing clean, maintainable microservices, REST APIs, authentication layers, and
+                                database architectures.</p>
+                        </div>
+                        <div class="card pillar-card">
+                            <div class="pillar-icon"><i class="fa-solid fa-robot"></i></div>
+                            <h4>AI & Agentic Systems</h4>
+                            <p>Building autonomous coding agents, retrieval systems (RAG), multimodal AI pipelines, and
+                                tool orchestration.</p>
+                        </div>
+                        <div class="card pillar-card">
+                            <div class="pillar-icon"><i class="fa-solid fa-bolt"></i></div>
+                            <h4>End-to-End Solutions</h4>
+                            <p>Taking ideas from proof-of-concept to production with testing, containerization, and
+                                modern UI interfaces.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Capabilities</span>
+                    <h2 class="section-title">Technical Expertise</h2>
+                    <div class="title-underline"></div>
+                    <p class="section-desc">The languages, frameworks, AI tools, and infrastructure I work with.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Category 1: Backend & APIs -->
+                    <div class="skill-category-card">
+                        <div class="skill-category-header">
+                            <div class="category-icon"><i class="fa-solid fa-gears"></i></div>
+                            <h3>Backend & APIs</h3>
+                        </div>
+                        <div class="skills-pill-list">
+                            <span class="skill-pill"><i class="fa-brands fa-python"></i> Python</span>
+                            <span class="skill-pill"><i class="fa-solid fa-bolt"></i> FastAPI</span>
+                            <span class="skill-pill"><i class="fa-solid fa-flask"></i> Flask</span>
+                            <span class="skill-pill"><i class="fa-solid fa-network-wired"></i> RESTful APIs</span>
+                            <span class="skill-pill"><i class="fa-solid fa-arrows-split-up-and-left"></i>
+                                Microservices</span>
+                            <span class="skill-pill"><i class="fa-solid fa-clock"></i> AsyncIO / Celery</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 2: AI / ML & Agentic Systems -->
+                    <div class="skill-category-card">
+                        <div class="skill-category-header">
+                            <div class="category-icon"><i class="fa-solid fa-microchip"></i></div>
+                            <h3>AI / ML & Agents</h3>
+                        </div>
+                        <div class="skills-pill-list">
+                            <span class="skill-pill"><i class="fa-solid fa-brain"></i> LLMs & Prompting</span>
+                            <span class="skill-pill"><i class="fa-solid fa-robot"></i> Agentic AI (ADK)</span>
+                            <span class="skill-pill"><i class="fa-solid fa-fire"></i> PyTorch</span>
+                            <span class="skill-pill"><i class="fa-solid fa-file-lines"></i> PaddleOCR</span>
+                            <span class="skill-pill"><i class="fa-solid fa-eye"></i> Computer Vision</span>
+                            <span class="skill-pill"><i class="fa-solid fa-comments"></i> NLP & RAG</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 3: Databases & Storage -->
+                    <div class="skill-category-card">
+                        <div class="skill-category-header">
+                            <div class="category-icon"><i class="fa-solid fa-database"></i></div>
+                            <h3>Databases & Data</h3>
+                        </div>
+                        <div class="skills-pill-list">
+                            <span class="skill-pill"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+                            <span class="skill-pill"><i class="fa-solid fa-hard-drive"></i> SQLite</span>
+                            <span class="skill-pill"><i class="fa-solid fa-cubes"></i> SQLAlchemy</span>
+                            <span class="skill-pill"><i class="fa-solid fa-memory"></i> Redis</span>
+                            <span class="skill-pill"><i class="fa-solid fa-file-code"></i> JSON / CSV Pipelines</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 4: Frontend & Application UI -->
+                    <div class="skill-category-card">
+                        <div class="skill-category-header">
+                            <div class="category-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                            <h3>Frontend & Mobile</h3>
+                        </div>
+                        <div class="skills-pill-list">
+                            <span class="skill-pill"><i class="fa-brands fa-react"></i> React</span>
+                            <span class="skill-pill"><i class="fa-solid fa-cube"></i> HTMX</span>
+                            <span class="skill-pill"><i class="fa-brands fa-flutter"></i> Flutter</span>
+                            <span class="skill-pill"><i class="fa-brands fa-js"></i> JavaScript (ES6+)</span>
+                            <span class="skill-pill"><i class="fa-brands fa-html5"></i> HTML5 / CSS3</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 5: DevOps & Tools -->
+                    <div class="skill-category-card">
+                        <div class="skill-category-header">
+                            <div class="category-icon"><i class="fa-solid fa-toolbox"></i></div>
+                            <h3>DevOps & Tooling</h3>
+                        </div>
+                        <div class="skills-pill-list">
+                            <span class="skill-pill"><i class="fa-brands fa-docker"></i> Docker</span>
+                            <span class="skill-pill"><i class="fa-brands fa-git-alt"></i> Git & GitHub</span>
+                            <span class="skill-pill"><i class="fa-brands fa-linux"></i> Linux / Bash</span>
+                            <span class="skill-pill"><i class="fa-solid fa-vial"></i> Postman / Pytest</span>
+                            <span class="skill-pill"><i class="fa-solid fa-diagram-project"></i> CI/CD Workflows</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 6: Engineering Disciplines -->
+                    <div class="skill-category-card">
+                        <div class="skill-category-header">
+                            <div class="category-icon"><i class="fa-solid fa-award"></i></div>
+                            <h3>Engineering Strengths</h3>
+                        </div>
+                        <div class="skills-pill-list">
+                            <span class="skill-pill"><i class="fa-solid fa-shield-halved"></i> Clean Architecture</span>
+                            <span class="skill-pill"><i class="fa-solid fa-chart-line"></i> Performance Tuning</span>
+                            <span class="skill-pill"><i class="fa-solid fa-magnifying-glass"></i> Problem Solving</span>
+                            <span class="skill-pill"><i class="fa-solid fa-sitemap"></i> System Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Portfolio</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="title-underline"></div>
+                    <p class="section-desc">Selected systems, applications, and AI pipelines I’ve engineered.</p>
+                </div>
+
+                <!-- Project Category Filter Tabs -->
+                <div class="project-filter-tabs animate-fade-in-up">
+                    <button type="button" class="filter-btn active" data-filter="all">
+                        <i class="fa-solid fa-cubes"></i> <span>All Projects</span>
+                    </button>
+                    <button type="button" class="filter-btn" data-filter="ai-agents">
+                        <i class="fa-solid fa-robot"></i> <span>AI & Agentic Systems</span>
+                    </button>
+                    <button type="button" class="filter-btn" data-filter="backend">
+                        <i class="fa-solid fa-server"></i> <span>Backend & APIs</span>
+                    </button>
+                    <button type="button" class="filter-btn" data-filter="cv-ocr">
+                        <i class="fa-solid fa-eye"></i> <span>OCR & Vision</span>
+                    </button>
+                </div>
+
+                <div class="project-grid">
+                    <!-- Project 1: NeuroMCQ -->
+                    <div class="project-card card-tilt" data-category="backend cv-ocr ai-agents">
+                        <div class="project-card-banner banner-gradient-1">
+                            <div class="project-card-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+                            <span class="project-badge">AI & Backend</span>
+                        </div>
+                        <div class="project-card-content">
+                            <h3 class="project-title">NeuroMCQ</h3>
+                            <p class="project-desc">
+                                An intelligent question-bank and assessment management platform built with FastAPI.
+                                Features automated OCR-based question extraction from images/documents using PaddleOCR,
+                                dynamic HTMX web interfaces, and rich export pipelines.
+                            </p>
+
+                            <div class="project-features">
+                                <span><i class="fa-solid fa-check"></i> OCR Question Extraction (PaddleOCR)</span>
+                                <span><i class="fa-solid fa-check"></i> CSV & JSON Export Pipelines</span>
+                                <span><i class="fa-solid fa-check"></i> PostgreSQL & SQLite Integration</span>
+                            </div>
+
+                            <div class="project-tech-tags">
+                                <span class="tag">FastAPI</span>
+                                <span class="tag">PaddleOCR</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">HTMX</span>
+                                <span class="tag">Python</span>
+                            </div>
+
+                            <div class="project-actions">
+                                <a href="https://github.com/shoaib1147-dev" target="_blank" rel="noopener noreferrer"
+                                    class="btn btn-sm btn-outline">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>Code</span>
+                                </a>
+                                <a href="#contact" class="btn btn-sm btn-primary">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    <span>View Details</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: AI Coding Agent -->
+                    <div class="project-card card-tilt" data-category="ai-agents backend">
+                        <div class="project-card-banner banner-gradient-2">
+                            <div class="project-card-icon"><i class="fa-solid fa-terminal"></i></div>
+                            <span class="project-badge">Agentic Systems</span>
+                        </div>
+                        <div class="project-card-content">
+                            <h3 class="project-title">AI Coding Agent</h3>
+                            <p class="project-desc">
+                                An autonomous software engineering agent built around Google ADK principles. Capable of
+                                multi-file codebase understanding, AST/semantic file indexing, interactive tool
+                                invocation, and intelligent code refactoring.
+                            </p>
+
+                            <div class="project-features">
+                                <span><i class="fa-solid fa-check"></i> Codebase Search & Semantic Indexing</span>
+                                <span><i class="fa-solid fa-check"></i> Dynamic Tool Calling & Execution</span>
+                                <span><i class="fa-solid fa-check"></i> Autonomous Task Orchestration</span>
+                            </div>
+
+                            <div class="project-tech-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Google ADK</span>
+                                <span class="tag">Agentic AI</span>
+                                <span class="tag">LLMs</span>
+                                <span class="tag">Tool Use</span>
+                            </div>
+
+                            <div class="project-actions">
+                                <a href="https://github.com/shoaib1147-dev" target="_blank" rel="noopener noreferrer"
+                                    class="btn btn-sm btn-outline">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>Code</span>
+                                </a>
+                                <a href="#contact" class="btn btn-sm btn-primary">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    <span>View Details</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: AI Content Generation System -->
+                    <div class="project-card card-tilt" data-category="ai-agents backend">
+                        <div class="project-card-banner banner-gradient-3">
+                            <div class="project-card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                            <span class="project-badge">Multimodal AI</span>
+                        </div>
+                        <div class="project-card-content">
+                            <h3 class="project-title">AI Content Generation System</h3>
+                            <p class="project-desc">
+                                An end-to-end multimodal pipeline designed for automated deep research, structured
+                                script synthesis, generative media discovery, video rendering, and multi-channel
+                                publishing workflows.
+                            </p>
+
+                            <div class="project-features">
+                                <span><i class="fa-solid fa-check"></i> Automated Research & Script Synthesis</span>
+                                <span><i class="fa-solid fa-check"></i> Media Asset Discovery & Generation</span>
+                                <span><i class="fa-solid fa-check"></i> Multi-platform Content Workflows</span>
+                            </div>
+
+                            <div class="project-tech-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Generative AI</span>
+                                <span class="tag">FastAPI</span>
+                                <span class="tag">Multimodal AI</span>
+                                <span class="tag">Automation</span>
+                            </div>
+
+                            <div class="project-actions">
+                                <a href="https://github.com/shoaib1147-dev" target="_blank" rel="noopener noreferrer"
+                                    class="btn btn-sm btn-outline">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>Code</span>
+                                </a>
+                                <a href="#contact" class="btn btn-sm btn-primary">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    <span>View Details</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="section certificates-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Credentials</span>
+                    <h2 class="section-title">Certifications & Achievements</h2>
+                    <div class="title-underline"></div>
+                    <p class="section-desc">Verified technical courses, industry credentials, and specialized
+                        achievements.</p>
+                </div>
+
+                <div class="certificates-grid">
+                    <!-- Certificate 1: Introduction to Flutter Course -->
+                    <div class="certificate-card card-tilt">
+                        <div class="certificate-media"
+                            onclick="openCertificateModal('images/certificate-flutter.jpg', 'Introduction to Flutter Course — Simplilearn SkillUp / Aditya Thakur')">
+                            <img src="images/certificate-flutter.jpg" alt="Introduction to Flutter Course Certificate"
+                                loading="lazy">
+                            <div class="certificate-overlay">
+                                <span class="zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i> Enlarge
+                                    Certificate</span>
+                            </div>
+                            <span class="cert-status-badge"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                        </div>
+                        <div class="certificate-content">
+                            <div class="certificate-issuer">
+                                <span class="issuer-name"><i class="fa-solid fa-award"></i> Simplilearn SkillUp</span>
+                                <span class="cert-date">Aug 2, 2026</span>
+                            </div>
+                            <h3 class="certificate-title">Introduction to Flutter Course</h3>
+                            <p class="certificate-desc">
+                                Certificate of Completion validating core expertise in Flutter framework architecture,
+                                widget hierarchy, state management, Dart programming, and building cross-platform apps.
+                            </p>
+                            <div class="certificate-meta">
+                                <span class="cert-id"><i class="fa-solid fa-shield-halved"></i> Certificate Code:
+                                    <strong>10549631</strong></span>
+                            </div>
+                            <div class="certificate-tags">
+                                <span class="tag">Flutter</span>
+                                <span class="tag">Dart</span>
+                                <span class="tag">Cross-Platform UI</span>
+                                <span class="tag">Mobile Apps</span>
+                            </div>
+                            <div class="certificate-actions">
+                                <button type="button" class="btn btn-sm btn-primary"
+                                    onclick="openCertificateModal('images/certificate-flutter.jpg', 'Introduction to Flutter Course — Simplilearn SkillUp / Aditya Thakur')">
+                                    <i class="fa-solid fa-expand"></i>
+                                    <span>View Certificate</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder Card: Upcoming Certifications -->
+                    <div class="certificate-card cert-placeholder-card card-tilt">
+                        <div class="placeholder-icon">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <h3 class="placeholder-title">More Certifications In Progress</h3>
+                        <p class="placeholder-desc">
+                            Currently working towards advanced credentials in Agentic AI Architectures, Deep Learning,
+                            and Distributed Backend Engineering.
+                        </p>
+                        <div class="upcoming-badge">
+                            <i class="fa-solid fa-hourglass-half"></i> Upcoming
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey & Education Section -->
+        <section id="journey" class="section journey-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Timeline</span>
+                    <h2 class="section-title">Background & Journey</h2>
+                    <div class="title-underline"></div>
+                    <p class="section-desc">My academic background and key engineering milestones.</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot current"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-badge current-badge"><i class="fa-solid fa-briefcase"></i> Current Role
+                            </div>
+                            <h3 class="timeline-title">Software Developer at <a href="https://neuroapp.pro/about.html"
+                                    target="_blank" rel="noopener noreferrer" class="timeline-link">Neuroapp <i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
+                            <p class="timeline-text">
+                                Architecting and developing production software, high-throughput backend services, and
+                                AI systems at <a href="https://neuroapp.pro/about.html" target="_blank"
+                                    rel="noopener noreferrer" class="text-link">Neuroapp</a>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-badge"><i class="fa-solid fa-graduation-cap"></i> Academic Foundation
+                            </div>
+                            <h3 class="timeline-title">B.S. in Electrical Engineering (Computing & AI)</h3>
+                            <p class="timeline-text">
+                                Rigorous training in computing principles, signal processing, mathematics, machine
+                                learning foundations, algorithms, and computational architectures.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-badge"><i class="fa-solid fa-server"></i> Backend Mastery</div>
+                            <h3 class="timeline-title">Python & FastAPI Architecture</h3>
+                            <p class="timeline-text">
+                                Specialized in production-grade backend development, designing async REST services,
+                                database schemas, and microservice architectures with FastAPI, Flask, and PostgreSQL.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-badge"><i class="fa-solid fa-brain"></i> Frontier AI</div>
+                            <h3 class="timeline-title">Agentic AI & Intelligent Systems</h3>
+                            <p class="timeline-text">
+                                Building at the cutting edge of AI agents, tool-augmented LLMs, multi-agent frameworks,
+                                OCR pipelines, and automated reasoning systems.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Get in Touch</span>
+                    <h2 class="section-title">Let's Connect & Collaborate</h2>
+                    <div class="title-underline"></div>
+                    <p class="section-desc">Have an opportunity, project idea, or question? Feel free to reach out.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info-panel">
+                        <h3>Let's build something <span class="gradient-text">impactful</span>.</h3>
+                        <p>
+                            I am open to full-time engineering roles, high-impact backend contracts, and cutting-edge AI
+                            / Agentic projects.
+                        </p>
+
+                        <div class="contact-details">
+                            <div class="contact-card">
+                                <div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="contact-card-text">
+                                    <span class="label">Email Me</span>
+                                    <div class="contact-card-link-row">
+                                        <a href="mailto:shoaibdotani1147@gmail.com"
+                                            class="value">shoaibdotani1147@gmail.com</a>
+                                        <button type="button" class="copy-email-btn" id="copy-email-btn"
+                                            title="Copy email address">
+                                            <i class="fa-regular fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contact-card">
+                                <div class="contact-card-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                                <div class="contact-card-text">
+                                    <span class="label">LinkedIn</span>
+                                    <a href="https://www.linkedin.com/in/shoaib-khan-a60070333/" target="_blank"
+                                        rel="noopener noreferrer" class="value">linkedin.com/in/shoaib-khan</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-card">
+                                <div class="contact-card-icon"><i class="fa-brands fa-github"></i></div>
+                                <div class="contact-card-text">
+                                    <span class="label">GitHub</span>
+                                    <a href="https://github.com/shoaib1147-dev" target="_blank"
+                                        rel="noopener noreferrer" class="value">github.com/shoaib1147-dev</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-panel">
+                        <form id="contact-form" class="modern-form" novalidate>
+                            <!-- Web3Forms Access Configuration -->
+                            <input type="hidden" name="access_key" value="66eeb9b3-bf5f-4392-8974-cbffe25b13ca">
+                            <input type="hidden" name="subject"
+                                value="New Message from Portfolio Website — Shoaib Khan">
+                            <input type="hidden" name="from_name" value="Portfolio Contact Form">
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-user input-icon"></i>
+                                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-at input-icon"></i>
+                                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-message input-icon textarea-icon"></i>
+                                    <textarea id="message" name="message" rows="4"
+                                        placeholder="Tell me about your project or opportunity..." required></textarea>
+                                </div>
+                            </div>
+
+                            <button type="submit" id="submit-btn" class="btn btn-primary btn-block">
+                                <span class="btn-text">Send Message</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#home" class="footer-logo">
+                    <span class="logo-symbol">&lt;/&gt;</span>
+                    <span>Shoaib Khan</span>
+                </a>
+                <p>Python Developer & AI/ML Engineer · Building scalable backends & autonomous agent systems.</p>
+                <div class="social-links" style="margin-top: 1rem;">
+                    <a href="https://github.com/shoaib1147-dev" target="_blank" rel="noopener noreferrer"
+                        class="social-icon" aria-label="GitHub Profile">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/shoaib-khan-a60070333/" target="_blank"
+                        rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn Profile">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:shoaibdotani1147@gmail.com" class="social-icon" aria-label="Send Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#certificates">Certificates</a>
+                <a href="#journey">Journey</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Shoaib Khan. Crafted with passion & clean code.</p>
+                <a href="#home" class="back-to-top" aria-label="Scroll back to top" title="Back to top">
+                    <i class="fa-solid fa-chevron-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Certificate Lightbox Modal -->
+    <div id="certificate-modal" class="cert-modal" aria-hidden="true" role="dialog">
+        <div class="cert-modal-backdrop" onclick="closeCertificateModal()"></div>
+        <div class="cert-modal-dialog">
+            <button type="button" class="cert-modal-close" onclick="closeCertificateModal()"
+                aria-label="Close certificate preview">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="cert-modal-body">
+                <img id="cert-modal-image" src="" alt="Certificate Preview">
+                <p id="cert-modal-caption" class="cert-modal-caption"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

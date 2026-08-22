@@ -1,0 +1,306 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> /F2 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >> /F3 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique >> >> >> >>
+endobj
+4 0 obj
+<< /Length 5116 >>
+stream
+q
+0.060 0.090 0.160 rg
+0 705 612 87 re f
+0.050 0.650 0.910 RG
+2 w
+0 705 m 612 705 l S
+Q
+BT
+/F2 24 Tf
+1.000 1.000 1.000 rg
+40 755 Td
+(SHOAIB KHAN) Tj
+ET
+BT
+/F1 11 Tf
+0.220 0.740 0.970 rg
+40 738 Td
+(Python Developer  |  AI / ML Engineer  |  Software Developer at Neuroapp) Tj
+ET
+BT
+/F1 8.5 Tf
+0.700 0.750 0.830 rg
+40 716 Td
+(Email: shoaibdotani1147@gmail.com  |  LinkedIn: linkedin.com/in/shoaib-khan  |  GitHub: github.com/shoaib1147-dev) Tj
+ET
+BT
+/F2 12 Tf
+0.060 0.090 0.160 rg
+40 678 Td
+(PROFESSIONAL SUMMARY) Tj
+ET
+q
+0.050 0.650 0.910 RG
+1.2 w
+40 674 m 572 674 l S
+Q
+BT
+/F1 9 Tf
+0.200 0.250 0.330 rg
+40 660 Td
+(Results-driven Python Developer and AI/ML Engineer with a solid background in Electrical Engineering (Computing & AI).) Tj
+ET
+BT
+/F1 9 Tf
+0.200 0.250 0.330 rg
+40 648 Td
+(Currently working at Neuroapp software company, architecting and building high-performance backend systems, REST APIs,) Tj
+ET
+BT
+/F1 9 Tf
+0.200 0.250 0.330 rg
+40 636 Td
+(and intelligent Agentic AI / OCR workflows with FastAPI, Flask, PaddleOCR, PyTorch, and PostgreSQL.) Tj
+ET
+BT
+/F2 12 Tf
+0.060 0.090 0.160 rg
+40 612 Td
+(EXPERIENCE) Tj
+ET
+q
+0.050 0.650 0.910 RG
+1.2 w
+40 608 m 572 608 l S
+Q
+BT
+/F2 10.5 Tf
+0.060 0.090 0.160 rg
+40 594 Td
+(Software Developer  -  Neuroapp) Tj
+ET
+BT
+/F3 9 Tf
+0.050 0.650 0.910 rg
+475 594 Td
+(Current Role  |  neuroapp.pro) Tj
+ET
+BT
+/F1 8.8 Tf
+0.200 0.250 0.330 rg
+48 581 Td
+(- Architecting and developing production software, high-throughput backend services, and scalable REST APIs.) Tj
+ET
+BT
+/F1 8.8 Tf
+0.200 0.250 0.330 rg
+48 569 Td
+(- Engineering AI and machine learning automation pipelines to streamline complex data processing tasks.) Tj
+ET
+BT
+/F1 8.8 Tf
+0.200 0.250 0.330 rg
+48 557 Td
+(- Collaborating on robust database modeling, system design, and deployment of resilient microservices.) Tj
+ET
+BT
+/F2 12 Tf
+0.060 0.090 0.160 rg
+40 541 Td
+(FEATURED ENGINEERING PROJECTS) Tj
+ET
+q
+0.050 0.650 0.910 RG
+1.2 w
+40 537 m 572 537 l S
+Q
+BT
+/F2 10 Tf
+0.060 0.090 0.160 rg
+40 524 Td
+(NeuroMCQ Platform) Tj
+ET
+BT
+/F3 8.5 Tf
+0.050 0.650 0.910 rg
+280 524 Td
+([FastAPI, PaddleOCR, PostgreSQL, SQLite, HTMX]) Tj
+ET
+BT
+/F1 8.5 Tf
+0.200 0.250 0.330 rg
+48 512 Td
+(- Built an intelligent assessment & question-bank management platform with FastAPI and HTMX.) Tj
+ET
+BT
+/F1 8.5 Tf
+0.200 0.250 0.330 rg
+48 501 Td
+(- Integrated PaddleOCR pipeline to automatically extract and parse questions/diagrams from documents & images.) Tj
+ET
+BT
+/F1 8.5 Tf
+0.200 0.250 0.330 rg
+48 490 Td
+(- Implemented dynamic CSV/JSON export and high-speed relational database storage.) Tj
+ET
+BT
+/F2 10 Tf
+0.060 0.090 0.160 rg
+40 462 Td
+(Autonomous AI Coding Agent) Tj
+ET
+BT
+/F3 8.5 Tf
+0.050 0.650 0.910 rg
+280 462 Td
+([Python, Google ADK, LLMs, Tool Orchestration]) Tj
+ET
+BT
+/F1 8.5 Tf
+0.200 0.250 0.330 rg
+48 450 Td
+(- Developed an autonomous engineering agent capable of multi-file codebase understanding and AST semantic indexing.) Tj
+ET
+BT
+/F1 8.5 Tf
+0.200 0.250 0.330 rg
+48 439 Td
+(- Implemented dynamic tool calling, automated code refactoring, and multi-step task execution.) Tj
+ET
+BT
+/F2 10 Tf
+0.060 0.090 0.160 rg
+40 411 Td
+(AI Content Generation & Research System) Tj
+ET
+BT
+/F3 8.5 Tf
+0.050 0.650 0.910 rg
+280 411 Td
+([Python, Generative AI, FastAPI, Multimodal AI]) Tj
+ET
+BT
+/F1 8.5 Tf
+0.200 0.250 0.330 rg
+48 399 Td
+(- Engineered an end-to-end multimodal pipeline for automated research, script synthesis, and media discovery.) Tj
+ET
+BT
+/F1 8.5 Tf
+0.200 0.250 0.330 rg
+48 388 Td
+(- Automated multi-platform content publishing workflows with asynchronous job queues.) Tj
+ET
+BT
+/F2 12 Tf
+0.060 0.090 0.160 rg
+40 373 Td
+(TECHNICAL SKILLS MATRIX) Tj
+ET
+q
+0.050 0.650 0.910 RG
+1.2 w
+40 369 m 572 369 l S
+Q
+BT
+/F2 8.5 Tf
+0.060 0.090 0.160 rg
+40 357 Td
+(Languages & Backend: ) Tj
+ET
+BT
+/F1 8.5 Tf
+0.200 0.250 0.330 rg
+165 357 Td
+(Python, FastAPI, Flask, REST APIs, Microservices, AsyncIO, SQL, PostgreSQL, SQLite, Redis) Tj
+ET
+BT
+/F2 8.5 Tf
+0.060 0.090 0.160 rg
+40 344 Td
+(AI & Machine Learning: ) Tj
+ET
+BT
+/F1 8.5 Tf
+0.200 0.250 0.330 rg
+165 344 Td
+(PyTorch, PaddleOCR, Computer Vision, LLMs, Agentic AI, RAG Systems, Multi-Agent Frameworks) Tj
+ET
+BT
+/F2 8.5 Tf
+0.060 0.090 0.160 rg
+40 331 Td
+(Frontend & Mobile: ) Tj
+ET
+BT
+/F1 8.5 Tf
+0.200 0.250 0.330 rg
+165 331 Td
+(Flutter, Dart, React, HTMX, HTML5, CSS3, JavaScript) Tj
+ET
+BT
+/F2 8.5 Tf
+0.060 0.090 0.160 rg
+40 318 Td
+(DevOps & Engineering: ) Tj
+ET
+BT
+/F1 8.5 Tf
+0.200 0.250 0.330 rg
+165 318 Td
+(Docker, Linux, Git, GitHub, Unit Testing, System Design, Clean Architecture) Tj
+ET
+BT
+/F2 12 Tf
+0.060 0.090 0.160 rg
+40 303 Td
+(EDUCATION & CERTIFICATIONS) Tj
+ET
+q
+0.050 0.650 0.910 RG
+1.2 w
+40 299 m 572 299 l S
+Q
+BT
+/F2 9.5 Tf
+0.060 0.090 0.160 rg
+40 287 Td
+(B.S. in Electrical Engineering - Computing & AI) Tj
+ET
+BT
+/F1 8.5 Tf
+0.300 0.350 0.420 rg
+48 275 Td
+(Foundational training in computing principles, algorithms, machine learning, and systems architecture.) Tj
+ET
+BT
+/F2 9.5 Tf
+0.060 0.090 0.160 rg
+40 260 Td
+(Introduction to Flutter Course - Simplilearn SkillUp / Aditya Thakur) Tj
+ET
+BT
+/F3 8.5 Tf
+0.050 0.650 0.910 rg
+450 260 Td
+(Certificate ID: 10549631  |  Aug 2026) Tj
+ET
+endstream
+endobj
+xref
+0 5
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000427 00000 n 
+trailer
+<< /Size 5 /Root 1 0 R >>
+startxref
+5595
+%%EOF
