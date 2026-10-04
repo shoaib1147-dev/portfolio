@@ -878,6 +878,101 @@
         </div>
     </div>
 
+    <!-- AI Assistant Floating Widget -->
+    <div id="ai-chat-widget" class="ai-chat-widget">
+        <!-- Floating Trigger Button -->
+        <button id="chat-toggle-btn" class="chat-toggle-btn" aria-label="Open AI Assistant" title="Chat with Shoaib's AI Assistant">
+            <div class="chat-toggle-pulse"></div>
+            <div class="chat-toggle-icon-wrap">
+                <i class="fa-solid fa-robot chat-icon-open"></i>
+                <i class="fa-solid fa-xmark chat-icon-close"></i>
+            </div>
+            <span class="chat-toggle-badge">AI</span>
+            <span class="chat-toggle-tooltip">Ask Shoaib's AI</span>
+        </button>
+
+        <!-- Floating Chat Window -->
+        <div id="chat-window" class="chat-window" aria-hidden="true" role="dialog" aria-label="Shoaib Khan AI Assistant">
+            <!-- Window Header -->
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <div class="chat-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                        <span class="chat-status-dot" title="Online"></span>
+                    </div>
+                    <div>
+                        <h3 class="chat-title">Shoaib's AI Assistant</h3>
+                        <p class="chat-subtitle">
+                            <span class="chat-model-badge">Groq LPU</span> · Online
+                        </p>
+                    </div>
+                </div>
+                <div class="chat-header-actions">
+                    <button type="button" id="chat-clear-btn" class="chat-action-btn" title="Clear Conversation" aria-label="Clear Chat">
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </button>
+                    <button type="button" id="chat-close-btn" class="chat-action-btn" title="Close Chat" aria-label="Close Chat">
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Messages Stream Area -->
+            <div id="chat-messages" class="chat-messages">
+                <!-- Welcome Message from Assistant -->
+                <div class="chat-msg chat-msg-assistant">
+                    <div class="msg-avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div class="msg-bubble">
+                        <p>Hi there! 👋 I'm <strong>Shoaib's AI Assistant</strong>, powered by ultra-fast Groq LPU inference.</p>
+                        <p>Ask me anything about Shoaib's experience at <strong>Neuroapp</strong>, his projects (like <em>NeuroMCQ</em> or <em>AI Coding Agent</em>), technical stack, or how to collaborate!</p>
+                    </div>
+                </div>
+
+                <!-- Suggestion Quick Chips -->
+                <div id="chat-suggestions" class="chat-suggestions">
+                    <span class="suggestions-label">Suggested questions:</span>
+                    <div class="suggestions-grid">
+                        <button type="button" class="suggestion-chip" data-query="What is your current role at Neuroapp?">
+                            <i class="fa-solid fa-briefcase"></i> Role at Neuroapp
+                        </button>
+                        <button type="button" class="suggestion-chip" data-query="What are your featured AI and backend projects?">
+                            <i class="fa-solid fa-code"></i> Top Projects
+                        </button>
+                        <button type="button" class="suggestion-chip" data-query="What is your core tech stack and skills?">
+                            <i class="fa-solid fa-layer-group"></i> Tech Stack
+                        </button>
+                        <button type="button" class="suggestion-chip" data-query="How can I contact or hire Shoaib?">
+                            <i class="fa-solid fa-paper-plane"></i> Contact & Hire
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typing Indicator (Hidden by default) -->
+            <div id="chat-typing-indicator" class="chat-typing-indicator hidden">
+                <div class="msg-avatar"><i class="fa-solid fa-robot"></i></div>
+                <div class="typing-bubble">
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                </div>
+            </div>
+
+            <!-- Chat Input Area -->
+            <form id="chat-form" class="chat-form" autocomplete="off">
+                <div class="chat-input-wrapper">
+                    <input type="text" id="chat-input" class="chat-input" placeholder="Ask anything about Shoaib..." maxlength="500" required>
+                    <button type="submit" id="chat-send-btn" class="chat-send-btn" aria-label="Send Message" title="Send">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+                </div>
+                <div class="chat-footer-note">
+                    <span>Answers grounded in Shoaib's background</span>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- Toast Notification Container -->
     <div id="toast-container" class="toast-container" aria-live="polite"></div>
 

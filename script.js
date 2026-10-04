@@ -478,3 +478,262 @@ document.addEventListener('keydown', (e) => {
         closeCertificateModal();
     }
 });
+
+// -------------------------------------------------------------------------
+// 15. AI Chatbot Widget Logic & Groq Integration
+// -------------------------------------------------------------------------
+(function initAIChatbot() {
+    // Configurable Backend URL for Render / Vercel:
+    // Once deployed to Render, change this URL to e.g. "https://your-service.onrender.com/api/chat"
+    const GROQ_BACKEND_API_URL = window.GROQ_BACKEND_API_URL || null;
+
+    const chatToggleBtn = document.getElementById('chat-toggle-btn');
+    const chatWindow = document.getElementById('chat-window');
+    const chatCloseBtn = document.getElementById('chat-close-btn');
+    const chatClearBtn = document.getElementById('chat-clear-btn');
+    const chatForm = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-input');
+    const chatMessages = document.getElementById('chat-messages');
+    const chatTypingIndicator = document.getElementById('chat-typing-indicator');
+
+    if (!chatToggleBtn || !chatWindow || !chatForm || !chatInput || !chatMessages) return;
+
+    let conversationHistory = [];
+
+    // Toggle Chat Window
+    function toggleChat(forceOpen) {
+        const isOpen = chatWindow.classList.contains('active');
+        const shouldOpen = forceOpen !== undefined ? forceOpen : !isOpen;
+
+        if (shouldOpen) {
+            chatWindow.classList.add('active');
+            chatToggleBtn.classList.add('open');
+            chatWindow.setAttribute('aria-hidden', 'false');
+            setTimeout(() => chatInput.focus(), 250);
+        } else {
+            chatWindow.classList.remove('active');
+            chatToggleBtn.classList.remove('open');
+            chatWindow.setAttribute('aria-hidden', 'true');
+        }
+    }
+
+    chatToggleBtn.addEventListener('click', () => toggleChat());
+    if (chatCloseBtn) chatCloseBtn.addEventListener('click', () => toggleChat(false));
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && chatWindow.classList.contains('active')) {
+            toggleChat(false);
+        }
+    });
+
+    // Clear Chat
+    if (chatClearBtn) {
+        chatClearBtn.addEventListener('click', () => {
+            conversationHistory = [];
+            chatMessages.innerHTML = `
+                <div class="chat-msg chat-msg-assistant">
+                    <div class="msg-avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div class="msg-bubble">
+                        <p>Conversation reset! ✨ What else would you like to know about Shoaib's engineering work?</p>
+                    </div>
+                </div>
+                <div id="chat-suggestions" class="chat-suggestions">
+                    <span class="suggestions-label">Suggested questions:</span>
+                    <div class="suggestions-grid">
+                        <button type="button" class="suggestion-chip" data-query="What is your current role at Neuroapp?">
+                            <i class="fa-solid fa-briefcase"></i> Role at Neuroapp
+                        </button>
+                        <button type="button" class="suggestion-chip" data-query="What are your featured AI and backend projects?">
+                            <i class="fa-solid fa-code"></i> Top Projects
+                        </button>
+                        <button type="button" class="suggestion-chip" data-query="What is your core tech stack and skills?">
+                            <i class="fa-solid fa-layer-group"></i> Tech Stack
+                        </button>
+                        <button type="button" class="suggestion-chip" data-query="How can I contact or hire Shoaib?">
+                            <i class="fa-solid fa-paper-plane"></i> Contact & Hire
+                        </button>
+                    </div>
+                </div>
+            `;
+            attachSuggestionEvents();
+            showToast('Chat history cleared', 'success');
+        });
+    }
+
+    // Scroll chat to bottom
+    function scrollToBottom() {
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Append Message to UI
+    function appendMessage(role, text) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `chat-msg chat-msg-${role}`;
+
+        const avatarIcon = role === 'user' ? 'fa-user' : 'fa-robot';
+        const formattedText = formatMarkdown(text);
+
+        msgDiv.innerHTML = `
+            <div class="msg-avatar"><i class="fa-solid ${avatarIcon}"></i></div>
+            <div class="msg-bubble">${formattedText}</div>
+        `;
+
+        // Hide suggestions once user starts chatting
+        const suggestionsEl = document.getElementById('chat-suggestions');
+        if (suggestionsEl && role === 'user') {
+            suggestionsEl.style.display = 'none';
+        }
+
+        chatMessages.appendChild(msgDiv);
+        scrollToBottom();
+    }
+
+    // Basic markdown formatter
+    function formatMarkdown(content) {
+        let clean = content
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+
+        // bold **text**
+        clean = clean.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        // italics *text*
+        clean = clean.replace(/\*(.*?)\*/g, '<em>$1</em>');
+        // links [text](url)
+        clean = clean.replace(/\[(.*?)\]\((https?:\/\/.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1 ↗</a>');
+        // line breaks
+        clean = clean.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>');
+
+        return `<p>${clean}</p>`;
+    }
+
+    // Show/Hide Typing Indicator
+    function setTyping(isTyping) {
+        if (chatTypingIndicator) {
+            if (isTyping) {
+                chatTypingIndicator.classList.remove('hidden');
+                scrollToBottom();
+            } else {
+                chatTypingIndicator.classList.add('hidden');
+            }
+        }
+    }
+
+    // Attach click events to suggestion chips
+    function attachSuggestionEvents() {
+        const chips = chatMessages.querySelectorAll('.suggestion-chip');
+        chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                const query = chip.getAttribute('data-query');
+                if (query) {
+                    handleUserSubmit(query);
+                }
+            });
+        });
+    }
+    attachSuggestionEvents();
+
+    // Handle Form Submit
+    chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const query = chatInput.value.trim();
+        if (!query) return;
+        chatInput.value = '';
+        handleUserSubmit(query);
+    });
+
+    // Handle User Question Processing
+    async function handleUserSubmit(userQuestion) {
+        appendMessage('user', userQuestion);
+        conversationHistory.push({ role: 'user', content: userQuestion });
+        setTyping(true);
+
+        try {
+            let answer = '';
+
+            // If a live backend URL is configured, call it
+            if (GROQ_BACKEND_API_URL) {
+                const response = await fetch(GROQ_BACKEND_API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        question: userQuestion,
+                        history: conversationHistory
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    answer = data.answer || data.reply || data.response;
+                } else {
+                    throw new Error('Backend returned status ' + response.status);
+                }
+            } else {
+                // Instant Knowledge-Base Engine (Fallback & Local Mode)
+                await new Promise(r => setTimeout(r, 650));
+                answer = generateKnowledgeResponse(userQuestion);
+            }
+
+            setTyping(false);
+            appendMessage('assistant', answer);
+            conversationHistory.push({ role: 'assistant', content: answer });
+        } catch (err) {
+            console.warn('AI Chat API fallback activated:', err);
+            setTyping(false);
+            const fallbackAnswer = generateKnowledgeResponse(userQuestion);
+            appendMessage('assistant', fallbackAnswer);
+            conversationHistory.push({ role: 'assistant', content: fallbackAnswer });
+        }
+    }
+
+    // Knowledge Base Engine for Shoaib Khan
+    function generateKnowledgeResponse(query) {
+        const q = query.toLowerCase();
+
+        // 1. Current Company & Role
+        if (q.includes('neuroapp') || q.includes('company') || q.includes('current role') || q.includes('where do you work') || q.includes('job') || q.includes('work at')) {
+            return "Shoaib is currently working as a **Software Developer** at [Neuroapp](https://neuroapp.pro/about.html) software company! 🏢\n\nAt Neuroapp, he designs and engineers scalable production backend services, high-throughput APIs, and AI automation systems. You can verify the company directly on their [official About page](https://neuroapp.pro/about.html).";
+        }
+
+        // 2. Featured Projects
+        if (q.includes('project') || q.includes('neuromcq') || q.includes('agent') || q.includes('code') || q.includes('portfolio work')) {
+            return "Here are Shoaib's key featured engineering projects:\n\n" +
+                   "• **NeuroMCQ Platform:** An intelligent assessment & question-bank platform built with **FastAPI** featuring automated OCR question extraction using **PaddleOCR**, dynamic **HTMX** UI, and PostgreSQL/SQLite integrations.\n\n" +
+                   "• **Autonomous AI Coding Agent:** An agentic software engineering system built around Google ADK principles capable of multi-file AST codebase understanding, semantic indexing, dynamic tool calling, and automated refactoring.\n\n" +
+                   "• **AI Content Generation System:** A multimodal pipeline for automated research, script synthesis, media asset discovery, and multi-channel content workflows.\n\n" +
+                   "You can view the code repositories on his [GitHub](https://github.com/shoaib1147-dev).";
+        }
+
+        // 3. Technical Skills & Stack
+        if (q.includes('skill') || q.includes('stack') || q.includes('tech') || q.includes('language') || q.includes('python') || q.includes('fastapi')) {
+            return "Shoaib's core technical competence includes:\n\n" +
+                   "• **Backend & APIs:** Python, FastAPI, Flask, AsyncIO, RESTful APIs, Microservices, PostgreSQL, SQLite, Redis\n" +
+                   "• **AI & Machine Learning:** PyTorch, PaddleOCR, LLMs, Agentic AI, Computer Vision, RAG Pipelines, Multi-Agent Systems\n" +
+                   "• **Frontend & Cross-Platform:** Flutter, Dart, React, HTMX, Modern HTML5/CSS3/JavaScript\n" +
+                   "• **DevOps & Architecture:** Docker, Linux, Git, GitHub, Clean Architecture, Performance Optimization";
+        }
+
+        // 4. Contact & Hire
+        if (q.includes('contact') || q.includes('hire') || q.includes('email') || q.includes('linkedin') || q.includes('reach out') || q.includes('message')) {
+            return "You can get in touch with Shoaib directly through multiple channels:\n\n" +
+                   "• **Personal Email:** [shoaibdotani1147@gmail.com](mailto:shoaibdotani1147@gmail.com)\n" +
+                   "• **LinkedIn:** [linkedin.com/in/shoaib-khan](https://www.linkedin.com/in/shoaib-khan-a60070333/)\n" +
+                   "• **GitHub:** [github.com/shoaib1147-dev](https://github.com/shoaib1147-dev)\n\n" +
+                   "You can also use the contact form at the bottom of this page to send a message directly to his Gmail!";
+        }
+
+        // 5. Resume / CV
+        if (q.includes('resume') || q.includes('cv') || q.includes('download')) {
+            return "You can download Shoaib's updated PDF resume by clicking the **'Download CV'** button in the top header, or [click here to download](assets/Shoaib_Khan_Resume.pdf)! 📄";
+        }
+
+        // 6. Education & Certifications
+        if (q.includes('education') || q.includes('degree') || q.includes('university') || q.includes('certificate') || q.includes('flutter')) {
+            return "Shoaib holds a **B.S. in Electrical Engineering (Computing & AI)**, with deep foundations in computer systems, mathematics, and machine learning.\n\nHe also holds a verified **Introduction to Flutter Course** certificate from Simplilearn SkillUp (Certificate ID: `10549631`, Aug 2026), verifiable in the Certificates section!";
+        }
+
+        // 7. General / Services / Overview
+        return "Shoaib Khan is a Python Backend Developer and AI/ML Engineer currently working at [Neuroapp](https://neuroapp.pro/about.html).\n\nHe specializes in building high-throughput FastAPI backends, Computer Vision/OCR pipelines, and autonomous Agentic AI systems. Feel free to ask about his **projects**, **skills**, **current role**, or how to **contact** him!";
+    }
+})();
